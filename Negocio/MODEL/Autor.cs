@@ -15,5 +15,10 @@ namespace Negocio.MODEL
         public int AutorId { get => autorId; set => autorId = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Nacionalidade { get => nacionalidade; set => nacionalidade = value; }
+
+        public override string ToString()
+        {
+            return autorId.ToString();
+        }
     }
 }

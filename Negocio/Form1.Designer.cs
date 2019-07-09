@@ -38,6 +38,7 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblAutorId = new System.Windows.Forms.Label();
             this.grpLivro = new System.Windows.Forms.GroupBox();
+            this.txtDataPublicacao = new System.Windows.Forms.DateTimePicker();
             this.btnBuscaNomeL = new System.Windows.Forms.Button();
             this.btnBuscaIdL = new System.Windows.Forms.Button();
             this.lblData = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.lblLivroId = new System.Windows.Forms.Label();
             this.lblLivroAutorId = new System.Windows.Forms.Label();
             this.txtLivroAutorId = new System.Windows.Forms.TextBox();
-            this.txtDataPublicacao = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtLivroId = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -91,6 +91,7 @@
             this.btnBuscaNome.TabIndex = 7;
             this.btnBuscaNome.Text = "Nome";
             this.btnBuscaNome.UseVisualStyleBackColor = true;
+            this.btnBuscaNome.Click += new System.EventHandler(this.BtnBuscaNome_Click);
             // 
             // btnBuscaId
             // 
@@ -102,6 +103,7 @@
             this.btnBuscaId.TabIndex = 6;
             this.btnBuscaId.Text = "Id";
             this.btnBuscaId.UseVisualStyleBackColor = true;
+            this.btnBuscaId.Click += new System.EventHandler(this.BtnBuscaId_Click);
             // 
             // txtNacionalidade
             // 
@@ -157,6 +159,7 @@
             // grpLivro
             // 
             this.grpLivro.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.grpLivro.Controls.Add(this.txtDataPublicacao);
             this.grpLivro.Controls.Add(this.btnBuscaNomeL);
             this.grpLivro.Controls.Add(this.btnBuscaIdL);
             this.grpLivro.Controls.Add(this.lblData);
@@ -164,7 +167,6 @@
             this.grpLivro.Controls.Add(this.lblLivroId);
             this.grpLivro.Controls.Add(this.lblLivroAutorId);
             this.grpLivro.Controls.Add(this.txtLivroAutorId);
-            this.grpLivro.Controls.Add(this.txtDataPublicacao);
             this.grpLivro.Controls.Add(this.txtTitulo);
             this.grpLivro.Controls.Add(this.txtLivroId);
             this.grpLivro.Location = new System.Drawing.Point(13, 167);
@@ -174,6 +176,14 @@
             this.grpLivro.TabStop = false;
             this.grpLivro.Text = "Livro";
             // 
+            // txtDataPublicacao
+            // 
+            this.txtDataPublicacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtDataPublicacao.Location = new System.Drawing.Point(108, 77);
+            this.txtDataPublicacao.Name = "txtDataPublicacao";
+            this.txtDataPublicacao.Size = new System.Drawing.Size(80, 20);
+            this.txtDataPublicacao.TabIndex = 12;
+            // 
             // btnBuscaNomeL
             // 
             this.btnBuscaNomeL.Location = new System.Drawing.Point(250, 15);
@@ -182,6 +192,7 @@
             this.btnBuscaNomeL.TabIndex = 9;
             this.btnBuscaNomeL.Text = "Nome";
             this.btnBuscaNomeL.UseVisualStyleBackColor = true;
+            this.btnBuscaNomeL.Click += new System.EventHandler(this.BtnBuscaNomeL_Click);
             // 
             // btnBuscaIdL
             // 
@@ -191,6 +202,7 @@
             this.btnBuscaIdL.TabIndex = 8;
             this.btnBuscaIdL.Text = "Id";
             this.btnBuscaIdL.UseVisualStyleBackColor = true;
+            this.btnBuscaIdL.Click += new System.EventHandler(this.BtnBuscaIdL_Click);
             // 
             // lblData
             // 
@@ -236,15 +248,8 @@
             // 
             this.txtLivroAutorId.Location = new System.Drawing.Point(108, 110);
             this.txtLivroAutorId.Name = "txtLivroAutorId";
-            this.txtLivroAutorId.Size = new System.Drawing.Size(80, 20);
+            this.txtLivroAutorId.Size = new System.Drawing.Size(62, 20);
             this.txtLivroAutorId.TabIndex = 7;
-            // 
-            // txtDataPublicacao
-            // 
-            this.txtDataPublicacao.Location = new System.Drawing.Point(108, 81);
-            this.txtDataPublicacao.Name = "txtDataPublicacao";
-            this.txtDataPublicacao.Size = new System.Drawing.Size(80, 20);
-            this.txtDataPublicacao.TabIndex = 6;
             // 
             // txtTitulo
             // 
@@ -267,6 +272,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(359, 281);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // lblPesquisa
             // 
@@ -315,6 +321,7 @@
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // btnBuscar
             // 
@@ -334,6 +341,7 @@
             this.btnBuscarLivro.TabIndex = 13;
             this.btnBuscarLivro.Text = "Buscar";
             this.btnBuscarLivro.UseVisualStyleBackColor = true;
+            this.btnBuscarLivro.Click += new System.EventHandler(this.BtnBuscarLivro_Click);
             // 
             // btnExcluirLivro
             // 
@@ -343,6 +351,7 @@
             this.btnExcluirLivro.TabIndex = 12;
             this.btnExcluirLivro.Text = "Excluir";
             this.btnExcluirLivro.UseVisualStyleBackColor = true;
+            this.btnExcluirLivro.Click += new System.EventHandler(this.BtnExcluirLivro_Click);
             // 
             // btnEditarLivro
             // 
@@ -352,6 +361,7 @@
             this.btnEditarLivro.TabIndex = 11;
             this.btnEditarLivro.Text = "Editar";
             this.btnEditarLivro.UseVisualStyleBackColor = true;
+            this.btnEditarLivro.Click += new System.EventHandler(this.BtnEditarLivro_Click);
             // 
             // btnGravarLivro
             // 
@@ -361,6 +371,7 @@
             this.btnGravarLivro.TabIndex = 10;
             this.btnGravarLivro.Text = "Gravar";
             this.btnGravarLivro.UseVisualStyleBackColor = true;
+            this.btnGravarLivro.Click += new System.EventHandler(this.BtnGravarLivro_Click);
             // 
             // btnNovoLivro
             // 
@@ -370,6 +381,7 @@
             this.btnNovoLivro.TabIndex = 9;
             this.btnNovoLivro.Text = "Novo";
             this.btnNovoLivro.UseVisualStyleBackColor = true;
+            this.btnNovoLivro.Click += new System.EventHandler(this.BtnNovoLivro_Click);
             // 
             // Form1
             // 
@@ -418,7 +430,6 @@
         private System.Windows.Forms.Label lblLivroId;
         private System.Windows.Forms.Label lblLivroAutorId;
         private System.Windows.Forms.TextBox txtLivroAutorId;
-        private System.Windows.Forms.TextBox txtDataPublicacao;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtLivroId;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -437,6 +448,7 @@
         private System.Windows.Forms.Button btnNovoLivro;
         private System.Windows.Forms.Button btnBuscaNomeL;
         private System.Windows.Forms.Button btnBuscaIdL;
+        private System.Windows.Forms.DateTimePicker txtDataPublicacao;
     }
 }
 
